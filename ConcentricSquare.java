@@ -1,28 +1,26 @@
 public class ConcentricSquare {
 
-    private static final int MAX_LAYER = 4;
+    private static final int MAX_NUMBER = 4;
 
     public static void main(String[] args) {
 
-        int size = 2 * MAX_LAYER - 1;
+        int size = 2 * MAX_NUMBER - 1;
 
         for (int row = 0; row < size; row++) {
             for (int col = 0; col < size; col++) {
 
-                int distanceFromTop = row;
-                int distanceFromLeft = col;
-                int distanceFromBottom = size - 1 - row;
-                int distanceFromRight = size - 1 - col;
+                int top = row;
+                int left = col;
+                int bottom = size - 1 - row;
+                int right = size - 1 - col;
 
-                int minDistance = Math.min(
-                        Math.min(distanceFromTop, distanceFromBottom),
-                        Math.min(distanceFromLeft, distanceFromRight)
-                );
+                int minDistance = Math.min(Math.min(top, bottom), Math.min(left, right));
 
-                int valueToPrint = MAX_LAYER - minDistance;
+                int value = MAX_NUMBER - minDistance;
 
-                System.out.print(valueToPrint + " ");
+                System.out.print(value + " ");
             }
+
             System.out.println();
         }
     }
