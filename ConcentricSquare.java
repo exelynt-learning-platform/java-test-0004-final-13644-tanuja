@@ -1,10 +1,10 @@
 public class ConcentricSquare {
 
-    private static final int MAX_VALUE = 4;
+    private static final int MAX_LAYER = 4;
 
     public static void main(String[] args) {
 
-        int size = 2 * MAX_VALUE - 1;
+        int size = 2 * MAX_LAYER - 1;
 
         for (int row = 0; row < size; row++) {
             for (int col = 0; col < size; col++) {
@@ -19,7 +19,7 @@ public class ConcentricSquare {
                         Math.min(distanceFromLeft, distanceFromRight)
                 );
 
-                int valueToPrint = MAX_VALUE - minDistance;
+                int valueToPrint = MAX_LAYER - minDistance;
 
                 System.out.print(valueToPrint + " ");
             }
