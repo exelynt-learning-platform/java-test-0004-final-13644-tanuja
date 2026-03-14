@@ -9,15 +9,19 @@ public class ConcentricSquare {
         for (int row = 0; row < size; row++) {
             for (int col = 0; col < size; col++) {
 
-                int top = row;
-                int left = col;
-                int bottom = size - 1 - row;
-                int right = size - 1 - col;
+                int distanceFromTop = row;
+                int distanceFromLeft = col;
+                int distanceFromBottom = size - 1 - row;
+                int distanceFromRight = size - 1 - col;
 
-                int minDistance = Math.min(Math.min(top, bottom), Math.min(left, right));
-                int value = MAX_VALUE - minDistance;
+                int minDistance = Math.min(
+                        Math.min(distanceFromTop, distanceFromBottom),
+                        Math.min(distanceFromLeft, distanceFromRight)
+                );
 
-                System.out.print(value + " ");
+                int valueToPrint = MAX_VALUE - minDistance;
+
+                System.out.print(valueToPrint + " ");
             }
             System.out.println();
         }
